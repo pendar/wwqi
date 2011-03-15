@@ -29,12 +29,18 @@ gem 'jquery-rails'
 gem 'calendar'
 
 gem 'pdfkit'
+
+group :develop do
+  gem 'beanstalk-client'
+  gem 'stalker'
+end
 #gem 'wkhtmltopdf'
 
 # gem "bj"
 # gem "hpricot", "0.6"
 # gem "sqlite3-ruby", :require => "sqlite3"
 # gem "aws-s3", :require => "aws/s3"
+
 group :test do
   gem 'database_cleaner'
   gem 'cucumber-rails', ">= 0.3.2"
@@ -45,6 +51,4 @@ group :test do
   gem 'launchy'    # So you can do Then show me the page
   gem "webrat", ">= 0.7.2"
 end
-
-
 

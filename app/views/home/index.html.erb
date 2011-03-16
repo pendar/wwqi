@@ -5,24 +5,10 @@
 <% content_for :head do %>
   <%= render 'head_index_content' %>
 <% end %>
-  
-<!--<div id="universalSearch">
-	<form action="/archive/browser" class="searchform" method="get">
-          <input type="text" value="Enter a keyword to search the archives" name="keyword_filter" class="swap_value" id="s" style="color: rgb(170, 170, 170); " onfocus="if(this.value=='Enter a keyword to search the archives'){this.value='';this.style.color = '#000';}" onblur="if(this.value==''){this.value='Enter a keyword to search the archives';this.style.color = '#aaa';}">
-          <button type="submit" id="search"></button>
-    </form>
-</div>-->
 
 <div id="home-main">
 	<div class="slide-wrap">
 	  <%= link_to(image_tag("/images/slideshow1#{language_suffix}.jpg", :id => "slide-img-1", :class => "slide", :alt => raw(t(:welcome_message))), archive_path) %>
-	  <%= link_to(image_tag("/images/slideshow2#{language_suffix}.jpg", :id => "slide-img-2", :class => "slide", :alt => t(:writings)), archive_path) %>
-	  <%= link_to(image_tag("/images/slideshow3#{language_suffix}.jpg", :id => "slide-img-3", :class => "slide", :alt => t(:legal_documents)), archive_path) %>
-	  <%= link_to(image_tag("/images/slideshow4#{language_suffix}.jpg", :id => "slide-img-5", :class => "slide", :alt => t(:photographs)), archive_path) %>
-	  <%= link_to(image_tag("/images/slideshow5#{language_suffix}.jpg", :id => "slide-img-5", :class => "slide", :alt => t(:artworks)), archive_path) %>
-	  <%= link_to(image_tag("/images/slideshow6#{language_suffix}.jpg", :id => "slide-img-6", :class => "slide", :alt => t(:everyday_objects)), archive_path) %>
-	  <%= link_to(image_tag("/images/slideshow7#{language_suffix}.jpg", :id => "slide-img-7", :class => "slide", :alt => t(:oral_histories)), archive_path) %>
-	  <%= link_to(image_tag("/images/slideshow8#{language_suffix}.jpg", :id => "slide-img-8", :class => "slide", :alt => t(:explore_the_archive)), archive_path) %>
 	</div>
 	<div class="home-right">
 		<div id="about">
@@ -31,7 +17,7 @@
 		  </div>
 		</div>
 		<div id="home_search_wrapper">
-			<h4><%= t(:home_search_prompt) %></h4>
+			<h4><%= "#{t(:home_search_prompt_prefix)} #{localized_number(@item_count)} #{t(:home_search_prompt_suffix)}" %></h4>
 		 		<div class="clearfix" id="simple_search">
 					<form method="get" class="searchform" action="/archive/browser">
 					  <input type="text" value="<%= t(:search_prompt) %>" name="keyword_filter" class="swap_value" id="s" style="color: rgb(170, 170, 170); " onfocus="if(this.value=='<%= t(:search_prompt) %>'){this.value='';this.style.color = '#000';}" onblur="if(this.value==''){this.value='<%= t(:search_prompt) %>';this.style.color = '#aaa';}" />

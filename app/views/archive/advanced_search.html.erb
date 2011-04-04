@@ -6,6 +6,7 @@
     <div id="archive_advanced_search_wrapper">
         <div class="clearfix" id="advanced_search">
             <%= form_tag(archive_browser_path, :method=> :post, :class => "advanced_search_form") do %>
+            <%= hidden_field_tag :exclusive, true %>
             <table class="styled">
                 <tr>
                     <td class="operator">
@@ -48,12 +49,12 @@
 					<td class="col-33">
                     <%= label_tag :collection_filter, t(:filter_results_by_collection) %>
                     <br />
-                    <%= select_tag :collection_filter, options_for_select(@collections), {:multiple => true} %>
+                    <%= select_tag 'collection_filter[]', options_for_select(@collections), {:multiple => true} %>
                     </td>
                     <td class="col-33">
                     <%= label_tag :subject_filter, t(:filter_results_by_genre) %>
                     <br />
-                    <%= select_tag :subject_filter, options_for_select(@genres), {:multiple => true} %>
+                    <%= select_tag 'subject_filter[]', options_for_select(@genres), {:multiple => true} %>
                     </td>
                     
                 </tr>
